@@ -113,7 +113,7 @@ ListPage {
         banner: AdMobBanner.Smart
 
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottom: parent.bottom
+        anchors.top: parent.top
 
         testDeviceIds: Constants.admobTestDeviceIds
     }

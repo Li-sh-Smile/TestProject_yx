@@ -25,7 +25,7 @@
             TODO: For publishing, replace sample app ID with your actual app ID.
             More information: https://developers.google.com/admob/android/quick-start#update_your_androidmanifestxml
           -->
-        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-3940256099942544~3347511713"/>
+        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-4332125914996860~2806676139"/>
     </application>
 
     <supports-screens android:largeScreens="true" android:normalScreens="true" android:anyDensity="true" android:smallScreens="true"/>
