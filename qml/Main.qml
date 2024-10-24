@@ -28,18 +28,41 @@ App {
     PluginMainItem {
         id: pluginMainItem
         z: 1           // display the plugin example above other items in the QML code below
-        visible: true // set this to true to show the plugin example
+        visible: false // set this to true to show the plugin example
     }
 
     NavigationStack {
 
-        AppPage {
-            title: qsTr("Main Page")
+        // initial page contains list if plugins and opens pages for each plugin when selected
+        ListPage {
+            id: page
+            title: qsTr("选择游戏 ")
 
-            Image {
-                source: "../assets/felgo-logo.png"
-                anchors.centerIn: parent
+            model: ListModel {
+                ListElement { type: "Advertising"; name: "AdMob";
+                    detailText: "Ad Monetization and Promotion"; image: "../assets/logo-admob.png" }
+                ListElement { type: "游戏"; name: "Don't let it run away";
+                    detailText: "这是一个打地鼠游戏"; image: "../assets/mole.png" }
             }
+
+            delegate: PluginListItem {
+                visible: name !== "GameCenter" || Theme.isIos
+                opacity: enabled ? 1.0 : 0.3
+
+                onSelected: {
+                    switch (name) {
+                    case "AdMob":
+                        page.navigationStack.push(Qt.resolvedUrl("pages/AdMobPage.qml"))
+                        break
+                    case qsTr("Don't let it run away"):
+                        page.navigationStack.push(Qt.resolvedUrl("pages/KillMole.qml"))
+                        break
+                    }
+                }
+            }
+
+            section.property: "type"
+            section.delegate: SimpleSection { }
         }
 
     }

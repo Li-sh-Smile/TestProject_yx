@@ -95,6 +95,7 @@ ListPage {
             // Interstitial
             else if (index === 7) {
                 interstitial.showInterstitialIfLoaded()
+                console.debug("showInterstitialIfLoaded",Qt.platform.os)
             }
         }
     }
@@ -107,6 +108,7 @@ ListPage {
         interstitial.loadInterstitial()
     }
 
+    //横幅广告
     AdMobBanner {
         id: adMobBanner
         adUnitId: Constants.admobBannerAdUnitId
@@ -118,6 +120,7 @@ ListPage {
         testDeviceIds: Constants.admobTestDeviceIds
     }
 
+    //插页广告
     AdMobInterstitial {
         id: interstitial
         adUnitId: Constants.admobInterstitialAdUnitId
