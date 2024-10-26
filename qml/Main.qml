@@ -2,6 +2,7 @@ import Felgo
 import QtQuick
 import "pages"
 import "helper"
+import "pages/KillMole"
 
 /*/////////////////////////////////////
   NOTE:
@@ -32,6 +33,7 @@ App {
     }
 
     NavigationStack {
+        anchors.fill: parent
 
         // initial page contains list if plugins and opens pages for each plugin when selected
         ListPage {
@@ -55,7 +57,7 @@ App {
                         page.navigationStack.push(Qt.resolvedUrl("pages/AdMobPage.qml"))
                         break
                     case qsTr("Don't let it run away"):
-                        page.navigationStack.push(Qt.resolvedUrl("pages/KillMole.qml"))
+                        page.navigationStack.push(Qt.resolvedUrl("pages/KillMole/KillMoleLevel.qml"))
                         break
                     }
                 }
