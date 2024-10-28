@@ -15,7 +15,7 @@ import "pages/KillMole"
 
 /////////////////////////////////////*/
 
-App {
+GameWindow {
     // You get free licenseKeys from https://felgo.com/licenseKey
     // With a licenseKey you can:
     //  * Publish your games & apps for the app stores
@@ -45,6 +45,8 @@ App {
                     detailText: "Ad Monetization and Promotion"; image: "../assets/logo-admob.png" }
                 ListElement { type: "游戏"; name: "Don't let it run away";
                     detailText: "这是一个打地鼠游戏"; image: "../assets/mole.png" }
+                ListElement { type: "游戏"; name: "Game 2048";
+                    detailText: "2048游戏"; image: "../assets/mole.png" }
             }
 
             delegate: PluginListItem {
@@ -58,6 +60,9 @@ App {
                         break
                     case qsTr("Don't let it run away"):
                         page.navigationStack.push(Qt.resolvedUrl("pages/KillMole/KillMoleLevel.qml"))
+                        break
+                    case qsTr("Game 2048"):
+                        page.navigationStack.push(Qt.resolvedUrl("pages/Game2048/Game2048.qml"))
                         break
                     }
                 }

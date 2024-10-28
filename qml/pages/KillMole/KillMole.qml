@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import Felgo
+import "../../helper"
 
 AppPage {
     id: game1
